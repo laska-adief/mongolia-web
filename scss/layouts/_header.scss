@@ -1,0 +1,125 @@
+header {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../dist/img/bg1.jpg");
+  background-size: cover;
+  background-position: 75%;
+  position: relative;
+
+  .layer {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: black;
+    opacity: 50%;
+    z-index: 1;
+  }
+
+  .container {
+    margin: auto;
+    height: 100%;
+    max-width: 80%;
+    position: relative;
+    z-index: 1;
+  }
+  nav {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    text-align: right;
+
+    .toggleMenu {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem;
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid $cl-text;
+      background: transparent;
+      transition: 0.3s ease-in-out;
+
+      & i {
+        color: $cl-text;
+      }
+
+      .fa-times {
+        display: none;
+      }
+
+      &.active {
+        .fa-times {
+          display: block;
+        }
+        .fa-bars {
+          display: none;
+        }
+      }
+    }
+
+    .links {
+      margin-top: 1.2rem;
+      .link a {
+        display: inline-block;
+        font-family: $font-heading;
+        color: $cl-text;
+        transform: translateX(1000%);
+        transition: 0.3s ease-in-out;
+
+        & {
+          margin-bottom: 1rem;
+        }
+
+        &:hover {
+          color: $cl-heading;
+        }
+      }
+
+      &.active {
+        a {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  //   HERO
+  .hero {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+
+    &-heading {
+      font-size: 3rem;
+      font-family: $font-heading;
+      color: $cl-heading;
+      letter-spacing: 5px;
+    }
+    &-desc {
+      max-width: 400px;
+      color: $cl-text;
+      margin-bottom: 2.5rem;
+      line-height: 30px;
+    }
+    &-cta {
+      display: inline-block;
+      margin-bottom: 3.75rem;
+      color: $cl-text;
+      font-family: $font-heading;
+      font-size: 1.2rem;
+      transition: 0.3s;
+
+      &:hover {
+        color: $cl-heading;
+      }
+    }
+  }
+}
